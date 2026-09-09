@@ -1,19 +1,21 @@
 n = int(input())
-
 while n > 0:
     a = int(input())
-    l = list(map(int,input().split()))
-    boolean = True
-    sum = 0
+    s = input()
+    counter = 0
+    max = 0
     for i in range(a):
-            sum += l[i]
-            if sum >= (i+1)*(i+2)/2:
-                pass
-            else :
-                boolean = False
-                break
-    if boolean:
-        print("YES")
+        if s[i] == '*':
+            if max <= counter:
+                max = counter
+            counter = 0
+        else:
+            counter += 1
+            if max <= counter:
+                max = counter
+
+    if max %2 == 0:
+        print(max//2)
     else:
-        print("NO")
-    n -=1
+        print((max+1)//2)
+    n-=1

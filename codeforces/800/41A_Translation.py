@@ -1,8 +1,9 @@
-n = int(input())
-while n > 0:
-    a,b = map(int,input().split())
-    if(a%b == 0):
-        print("YES")
-    else:
-        print("NO")
-    n -= 1
+s = input()
+t = input()
+rev = ""
+for i in range(len(s)) :
+    rev = rev + s[len(s)-i-1]
+if rev == t :
+    print("YES")
+else:
+    print("NO")

@@ -1,37 +1,30 @@
 #include <iostream>
+#include <vector>
+
 using namespace std;
 
 int main()
 {
-    int a;
-    cin >> a;
-    while(a>0)
+    int t;
+    cin >> t;
+    while (t > 0)
     {
-        int n,k;
-        cin >> n >> k;
-        int arr[n];
-        bool found = false;
-        for (int i = 0; i < n; i++)
+        long long int n , k ,x;
+        cin >> n >> k >> x;
+        long long int sum_max = 0;
+        long long int sum_min = k*(k+1)/2;
+        for (int i = 0; i < k; i++)
         {
-            cin >> arr[i];
-            if (arr[i] == k)
-            {
-                if (found){}
-                else
-                {
-                    found = true;
-                }
-            }
+            sum_max += n-i;
         }
-        if (found)
+        if (sum_max >= x && sum_min <= x)
         {
-            cout << "YES\n";
+            cout << "YES\n"; 
         }
-        
-        if (!found)
+        else
         {
             cout << "NO\n";
         }
-        a--; 
+        t--;
     }
 }
